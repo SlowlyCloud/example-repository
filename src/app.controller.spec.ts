@@ -14,9 +14,15 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
+  describe('root:health-check', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+      expect(appController.getHealthCheck()).toBe('Hello World!');
+    });
+  });
+
+  describe('root:ping', () => {
+    it('should return "pong"', () => {
+      expect(appController.getPing()).toBe('pong');
     });
   });
 });
